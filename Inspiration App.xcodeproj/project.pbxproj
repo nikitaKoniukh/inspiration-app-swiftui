@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA5FA859246A800A0093A24C /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FA858246A800A0093A24C /* DateProvider.swift */; };
 		CAF3C9DE2468814100E0B5D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3C9DD2468814100E0B5D3 /* AppDelegate.swift */; };
 		CAF3C9E02468814100E0B5D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3C9DF2468814100E0B5D3 /* SceneDelegate.swift */; };
 		CAF3C9E22468814100E0B5D3 /* SliderMotivationContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3C9E12468814100E0B5D3 /* SliderMotivationContentView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA5FA858246A800A0093A24C /* DateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
 		CAF3C9DA2468814100E0B5D3 /* Inspiration App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inspiration App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF3C9DD2468814100E0B5D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAF3C9DF2468814100E0B5D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				CAF3C9F5246898BC00E0B5D3 /* Motivation.swift */,
 				CAF3C9F724689CAE00E0B5D3 /* DataService.swift */,
 				CAF3C9F92468A5E000E0B5D3 /* CurrentMotivation.swift */,
+				CA5FA858246A800A0093A24C /* DateProvider.swift */,
 			);
 			path = "Inspiration App";
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				CAF3C9E02468814100E0B5D3 /* SceneDelegate.swift in Sources */,
 				CAF3C9E22468814100E0B5D3 /* SliderMotivationContentView.swift in Sources */,
 				CAF3C9F6246898BC00E0B5D3 /* Motivation.swift in Sources */,
+				CA5FA859246A800A0093A24C /* DateProvider.swift in Sources */,
 				CAF3C9FA2468A5E000E0B5D3 /* CurrentMotivation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Motivation {
+struct Motivation: Codable {
     var description: String
     var motivationDate: String
     var id: Int

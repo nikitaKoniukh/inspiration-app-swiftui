@@ -15,38 +15,115 @@ struct CurrentMotivation {
 
     var dataService = DataService.instance.getMotivations()
 
-    lazy var subviews = [
-        UIHostingController(rootView: Subview(imageString: "1", motivationDate: getYestardayDate(), motivatioText: dataService[0].description)),
-        UIHostingController(rootView: Subview(imageString: "2", motivationDate: getCurrentDate(), motivatioText: dataService[1].description)),
-        UIHostingController(rootView: Subview(imageString: "3", motivationDate: getTomorrowDate(), motivatioText: dataService[2].description)),
 
-    ]
+
+    var s: [UIHostingController<Subview>]? {
+        get {
+            return UserDefaults.standard.object(forKey: "savedMotivations") as? [UIHostingController<Subview>]
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "savedMotivations")
+        }
+    }
+
+    var motivationsThatWereShawnId: [Int]? {
+        get {
+            UserDefaults.standard.array(forKey: "savedMotivationsId") as? [Int]
+        } set {
+            UserDefaults.standard.set(newValue, forKey: "savedMotivationsId")
+        }
+
+    }
+
+   var getAllObjects: [Motivation] {
+    let defaultObject = Motivation(description: dataService[0].description, motivationDate: getCurrentDate(), id: 0)
+         if let objects = UserDefaults.standard.value(forKey: "user_objects") as? Data {
+            let decoder = JSONDecoder()
+            if let objectsDecoded = try? decoder.decode(Array.self, from: objects) as [Motivation] {
+               return objectsDecoded
+            } else {
+               return [defaultObject]
+            }
+         } else {
+            return [defaultObject]
+         }
+      }
+
+    func saveAllObjects(allObjects: [Motivation]) {
+         let encoder = JSONEncoder()
+         if let encoded = try? encoder.encode(allObjects){
+            UserDefaults.standard.set(encoded, forKey: "user_objects")
+         }
+    }
+
+
+    mutating func setSubViews() -> [UIHostingController<Subview>]{
+
+        var motivations = [Motivation]()
+        motivations = getAllObjects
+
+
+
+        // check if array contains default object with id 0, if yes remove
+        // result will be true just for the first run
+        if motivations.contains(where: { $0.id == 0}) {
+            motivations.removeAll()
+        }
+
+         //check date
+        let lastMotivation = motivations.last
+        if lastMotivation?.motivationDate == getCurrentDate() {
+            var subviews = [UIHostingController<Subview>]()
+            for item in motivations {
+                subviews.append(UIHostingController(rootView: Subview(imageString: "5", motivationDate: getCurrentDate(), motivatioText: item.description)))
+            }
+            return subviews
+        }
+
+
+        //save new motivation
+        let id = getCurrentMotivationId()
+        let newMotivation = Motivation(description: dataService[id].description, motivationDate: getCurrentDate(), id: id)
+        motivations.append(newMotivation)
+        saveAllObjects(allObjects: motivations)
+
+        // add subview
+        var subviews = [UIHostingController<Subview>]()
+        for item in motivations {
+            //random image
+            let imageString = String(Int.random(in: 1...10))
+
+            subviews.append(UIHostingController(rootView: Subview(imageString: imageString, motivationDate: getCurrentDate(), motivatioText: item.description)))
+        }
+        return subviews
+    }
+
+    mutating func getCurrentMotivationId() -> Int{
+        var lastMotivationId: Int
+
+        if motivationsThatWereShawnId == nil {
+            motivationsThatWereShawnId = [Int]()
+            lastMotivationId = 1
+            motivationsThatWereShawnId?.append(1)
+            return lastMotivationId
+        } else {
+            lastMotivationId = motivationsThatWereShawnId?.last ?? 0
+            lastMotivationId += 1
+            motivationsThatWereShawnId?.append(lastMotivationId)
+            return lastMotivationId
+        }
+    }
+
+
 
     func getCurrentDate() -> String {
         let todaysDate = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        dateFormatter.dateFormat = "d MMM \nEEEE"
         let DateInFormat = dateFormatter.string(from: todaysDate as Date)
         return DateInFormat
     }
-
-
-    func getYestardayDate() -> String {
-        let todaysDate = Date.yesterday
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
-        let DateInFormat = dateFormatter.string(from: todaysDate as Date)
-        return DateInFormat
-    }
-
-    func getTomorrowDate() -> String {
-        let todaysDate = Date.tomorrow
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
-        let DateInFormat = dateFormatter.string(from: todaysDate as Date)
-        return DateInFormat
-    }
-
 }
 
 extension Date {
