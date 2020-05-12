@@ -26,32 +26,36 @@ struct SliderMotivationContentView: View {
 
 
         VStack(alignment: .leading) {
+
             PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
-                .frame(minHeight: 0, maxHeight: .infinity)
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
 
-            Group {
-                if currentPageIndex == 0 {
-                    Text(yestardayDate)
-                    .font(.subheadline)
-                } else if currentPageIndex == 1 {
-                    Text(currentDate)
-                    .font(.subheadline)
-                } else if currentPageIndex == 2{
-                    Text(tomorrowDate)
-                    .font(.subheadline)
-                }
 
-                Text(motivations[currentPageIndex].motivationDate)
-                    .font(.title)
-                Text(motivations[currentPageIndex].description)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                    .frame(width: 300, height:100, alignment: .leading)
-                    .lineLimit(nil)
-            }
+//            Group {
+//                if currentPageIndex == 0 {
+//                    Text(yestardayDate)
+//                    .font(.subheadline)
+//                } else if currentPageIndex == 1 {
+//                    Text(currentDate)
+//                    .font(.subheadline)
+//                } else if currentPageIndex == 2{
+//                    Text(tomorrowDate)
+//                    .font(.subheadline)
+//                }
+//
+//                Text(motivations[currentPageIndex].motivationDate)
+//                    .font(.title)
+//                Text(motivations[currentPageIndex].description)
+//                    .font(.subheadline)
+//                    .foregroundColor(.gray)
+//                    .frame(width: 300, height:100, alignment: .leading)
+//                    .lineLimit(nil)
+//            }
 
-            .padding(.leading)
+           // .padding(.leading)
         }
+        .edgesIgnoringSafeArea(.all)
+
     }
 }
 

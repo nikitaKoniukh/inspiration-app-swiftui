@@ -13,11 +13,12 @@ struct CurrentMotivation {
 
     static var instance = CurrentMotivation()
 
+    var dataService = DataService.instance.getMotivations()
 
     lazy var subviews = [
-        UIHostingController(rootView: Subview(imageString: "1", motivationDate: getYestardayDate())),
-        UIHostingController(rootView: Subview(imageString: "2", motivationDate: getCurrentDate())),
-        UIHostingController(rootView: Subview(imageString: "3", motivationDate: getTomorrowDate())),
+        UIHostingController(rootView: Subview(imageString: "1", motivationDate: getYestardayDate(), motivatioText: dataService[0].description)),
+        UIHostingController(rootView: Subview(imageString: "2", motivationDate: getCurrentDate(), motivatioText: dataService[1].description)),
+        UIHostingController(rootView: Subview(imageString: "3", motivationDate: getTomorrowDate(), motivatioText: dataService[2].description)),
 
     ]
 

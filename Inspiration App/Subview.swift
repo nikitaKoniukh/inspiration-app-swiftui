@@ -11,16 +11,34 @@ import SwiftUI
 struct ImageOverlay: View {
 
     var motivDat: String
+    var motivText: String
+
     var body: some View {
         ZStack {
-            Text(motivDat)
-                .font(.callout)
-                .padding(6)
-                .foregroundColor(.white)
-        }.background(Color.black)
-            .opacity(0.8)
-            .cornerRadius(10.0)
-            .padding(6)
+
+            VStack {
+                Spacer()
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50)
+                Text(motivDat)
+                    .font(.custom("Avenir-Next", size: 40))
+                    .bold()
+                    .padding(6)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                Spacer()
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 100)
+
+                Text(motivText)
+                    .font(.custom("Avenir-Next", size: 30))
+                    .bold()
+                    .padding(6)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+            }
+
+
+        }
+        
     }
 }
 
@@ -28,6 +46,7 @@ struct Subview: View {
 
     var imageString: String
     var motivationDate: String
+    var motivatioText: String
 
 
     var body: some View {
@@ -37,16 +56,16 @@ struct Subview: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                 .clipped()
-                .blur(radius: 5)
-                .overlay(ImageOverlay(motivDat: motivationDate), alignment: .bottomTrailing)
+                .overlay(ImageOverlay(motivDat: motivationDate, motivText: motivatioText), alignment: .top)
         }
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
 #if DEBUG
 struct Subview_Previews: PreviewProvider {
     static var previews: some View {
-        Subview(imageString: "1", motivationDate: "101010")
+        Subview(imageString: "1", motivationDate: "101010", motivatioText: "kjdsnfkjsdfsdfjosdjf")
     }
 }
 #endif
