@@ -15,7 +15,7 @@ struct SliderMotivationContentView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subviews)
+            PageViewController(currentPageIndex: subviews.count - 2, viewControllers: subviews)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         }
         .edgesIgnoringSafeArea(.all)

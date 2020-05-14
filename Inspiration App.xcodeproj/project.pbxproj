@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA5FA859246A800A0093A24C /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FA858246A800A0093A24C /* DateProvider.swift */; };
+		CA71CC1C246B2C8500EAEE07 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA71CC1B246B2C8500EAEE07 /* Constants.swift */; };
+		CABB4698246D29310001BBA9 /* peter-fogden-z7oytXGI6VI-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CABB4697246D29310001BBA9 /* peter-fogden-z7oytXGI6VI-unsplash.jpg */; };
 		CAF3C9DE2468814100E0B5D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3C9DD2468814100E0B5D3 /* AppDelegate.swift */; };
 		CAF3C9E02468814100E0B5D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3C9DF2468814100E0B5D3 /* SceneDelegate.swift */; };
 		CAF3C9E22468814100E0B5D3 /* SliderMotivationContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3C9E12468814100E0B5D3 /* SliderMotivationContentView.swift */; };
@@ -22,7 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CA5FA858246A800A0093A24C /* DateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
+		CA71CC1B246B2C8500EAEE07 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CABB4697246D29310001BBA9 /* peter-fogden-z7oytXGI6VI-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "peter-fogden-z7oytXGI6VI-unsplash.jpg"; sourceTree = "<group>"; };
 		CAF3C9DA2468814100E0B5D3 /* Inspiration App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inspiration App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF3C9DD2468814100E0B5D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAF3C9DF2468814100E0B5D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA71CC16246B2C2D00EAEE07 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CAF3C9DD2468814100E0B5D3 /* AppDelegate.swift */,
+				CAF3C9DF2468814100E0B5D3 /* SceneDelegate.swift */,
+				CAF3C9E32468814200E0B5D3 /* Assets.xcassets */,
+				CAF3C9E82468814200E0B5D3 /* LaunchScreen.storyboard */,
+				CAF3C9EB2468814200E0B5D3 /* Info.plist */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		CA71CC1A246B2C6C00EAEE07 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CA71CC1B246B2C8500EAEE07 /* Constants.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		CA71CC1D246B2C9100EAEE07 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CAF3C9F1246884D400E0B5D3 /* Subview.swift */,
+				CAF3C9E12468814100E0B5D3 /* SliderMotivationContentView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CA71CC1E246B2CA600EAEE07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CAF3C9F5246898BC00E0B5D3 /* Motivation.swift */,
+				CAF3C9F724689CAE00E0B5D3 /* DataService.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CA71CC1F246B2CFF00EAEE07 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CAF3C9F32468850400E0B5D3 /* PageViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CABB4696246D29180001BBA9 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				CABB4697246D29310001BBA9 /* peter-fogden-z7oytXGI6VI-unsplash.jpg */,
+			);
+			name = Resourses;
+			sourceTree = "<group>";
+		};
 		CAF3C9D12468814100E0B5D3 = {
 			isa = PBXGroup;
 			children = (
@@ -68,19 +124,14 @@
 		CAF3C9DC2468814100E0B5D3 /* Inspiration App */ = {
 			isa = PBXGroup;
 			children = (
-				CAF3C9F1246884D400E0B5D3 /* Subview.swift */,
-				CAF3C9DD2468814100E0B5D3 /* AppDelegate.swift */,
-				CAF3C9DF2468814100E0B5D3 /* SceneDelegate.swift */,
-				CAF3C9E12468814100E0B5D3 /* SliderMotivationContentView.swift */,
-				CAF3C9E32468814200E0B5D3 /* Assets.xcassets */,
-				CAF3C9E82468814200E0B5D3 /* LaunchScreen.storyboard */,
-				CAF3C9EB2468814200E0B5D3 /* Info.plist */,
+				CABB4696246D29180001BBA9 /* Resourses */,
+				CA71CC1F246B2CFF00EAEE07 /* Controllers */,
 				CAF3C9E52468814200E0B5D3 /* Preview Content */,
-				CAF3C9F32468850400E0B5D3 /* PageViewController.swift */,
-				CAF3C9F5246898BC00E0B5D3 /* Motivation.swift */,
-				CAF3C9F724689CAE00E0B5D3 /* DataService.swift */,
+				CA71CC16246B2C2D00EAEE07 /* Helpers */,
+				CA71CC1E246B2CA600EAEE07 /* Models */,
+				CA71CC1D246B2C9100EAEE07 /* Views */,
+				CA71CC1A246B2C6C00EAEE07 /* Utils */,
 				CAF3C9F92468A5E000E0B5D3 /* CurrentMotivation.swift */,
-				CA5FA858246A800A0093A24C /* DateProvider.swift */,
 			);
 			path = "Inspiration App";
 			sourceTree = "<group>";
@@ -153,6 +204,7 @@
 			files = (
 				CAF3C9EA2468814200E0B5D3 /* LaunchScreen.storyboard in Resources */,
 				CAF3C9E72468814200E0B5D3 /* Preview Assets.xcassets in Resources */,
+				CABB4698246D29310001BBA9 /* peter-fogden-z7oytXGI6VI-unsplash.jpg in Resources */,
 				CAF3C9E42468814200E0B5D3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,9 +221,9 @@
 				CAF3C9F42468850400E0B5D3 /* PageViewController.swift in Sources */,
 				CAF3C9F2246884D400E0B5D3 /* Subview.swift in Sources */,
 				CAF3C9E02468814100E0B5D3 /* SceneDelegate.swift in Sources */,
+				CA71CC1C246B2C8500EAEE07 /* Constants.swift in Sources */,
 				CAF3C9E22468814100E0B5D3 /* SliderMotivationContentView.swift in Sources */,
 				CAF3C9F6246898BC00E0B5D3 /* Motivation.swift in Sources */,
-				CA5FA859246A800A0093A24C /* DateProvider.swift in Sources */,
 				CAF3C9FA2468A5E000E0B5D3 /* CurrentMotivation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

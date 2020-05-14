@@ -41,6 +41,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+         let contentView = SliderMotivationContentView()
+
+               // Use a UIHostingController as window root view controller.
+               if let windowScene = scene as? UIWindowScene {
+                   let window = UIWindow(windowScene: windowScene)
+                   window.rootViewController = UIHostingController(rootView: contentView)
+                   self.window = window
+                   window.makeKeyAndVisible()
+               }
     }
 
     func sceneWillResignActive(_ scene: UIScene) {

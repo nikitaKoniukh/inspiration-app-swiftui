@@ -18,25 +18,23 @@ struct ImageOverlay: View {
 
             VStack {
                 Spacer()
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50)
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 80)
                 Text(motivDat)
-                    .font(.custom("Avenir-Next", size: 40))
+                    .font(.custom("Avenir-Next", size: 60))
                     .bold()
                     .padding(6)
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                 Spacer()
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 100)
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 120)
 
                 Text(motivText)
-                    .font(.custom("Avenir-Next", size: 30))
+                    .font(.custom("Avenir-Next", size: 35))
                     .bold()
                     .padding(6)
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
             }
-
-
         }
         
     }
@@ -47,7 +45,6 @@ struct Subview: View {
     var imageString: String
     var motivationDate: String
     var motivatioText: String
-
 
     var body: some View {
         HStack {
