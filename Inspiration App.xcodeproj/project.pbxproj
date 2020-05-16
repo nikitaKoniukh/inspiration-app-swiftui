@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA58CD182470028C0090D207 /* NotificationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA58CD172470028C0090D207 /* NotificationSettings.swift */; };
 		CA71CC1C246B2C8500EAEE07 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA71CC1B246B2C8500EAEE07 /* Constants.swift */; };
 		CABB4698246D29310001BBA9 /* peter-fogden-z7oytXGI6VI-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CABB4697246D29310001BBA9 /* peter-fogden-z7oytXGI6VI-unsplash.jpg */; };
 		CAF3C9DE2468814100E0B5D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF3C9DD2468814100E0B5D3 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA58CD172470028C0090D207 /* NotificationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettings.swift; sourceTree = "<group>"; };
 		CA71CC1B246B2C8500EAEE07 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CABB4697246D29310001BBA9 /* peter-fogden-z7oytXGI6VI-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "peter-fogden-z7oytXGI6VI-unsplash.jpg"; sourceTree = "<group>"; };
 		CAF3C9DA2468814100E0B5D3 /* Inspiration App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inspiration App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,7 @@
 			children = (
 				CAF3C9F1246884D400E0B5D3 /* Subview.swift */,
 				CAF3C9E12468814100E0B5D3 /* SliderMotivationContentView.swift */,
+				CA58CD172470028C0090D207 /* NotificationSettings.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				CAF3C9E22468814100E0B5D3 /* SliderMotivationContentView.swift in Sources */,
 				CAF3C9F6246898BC00E0B5D3 /* Motivation.swift in Sources */,
 				CAF3C9FA2468A5E000E0B5D3 /* CurrentMotivation.swift in Sources */,
+				CA58CD182470028C0090D207 /* NotificationSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
