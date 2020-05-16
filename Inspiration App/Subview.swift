@@ -54,8 +54,22 @@ struct Subview: View {
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                 .clipped()
                 .overlay(ImageOverlay(motivDat: motivationDate, motivText: motivatioText), alignment: .top)
+            .gesture(TapGesture(count: 2).onEnded {
+                self.shareButton(textToShare: self.motivatioText + "\n---Motivations---" + "\nwww.Сдесь будет ссылка на приложение")
+            })
         }
         .edgesIgnoringSafeArea(.all)
+    }
+
+    func shareButton(textToShare: String) {
+        let vc = UIActivityViewController(activityItems: [textToShare], applicationActivities: [])
+        vc.excludedActivityTypes =  [
+            UIActivity.ActivityType.assignToContact,
+            UIActivity.ActivityType.addToReadingList,
+            UIActivity.ActivityType.mail,
+            UIActivity.ActivityType.message
+        ]
+        UIApplication.shared.windows.first?.rootViewController?.present(vc, animated: true, completion: nil)
     }
 }
 
